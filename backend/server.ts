@@ -69,7 +69,7 @@ io.on('connection', (socket: Socket) => {
 });
 
 // Redireciona qualquer outra rota para o React (SPA fallback)
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(frontendDistPath, 'index.html'));
 });
 
