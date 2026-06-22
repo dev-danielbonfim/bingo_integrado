@@ -23,8 +23,10 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
   overflow: hidden;
+  touch-action: none;
   background-image: radial-gradient(circle at 50% -20%, #150f4a, var(--bg-dark));
 }
 
@@ -159,6 +161,7 @@ button {
 /* Responsive Bingo Layout */
 .app-container {
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -282,7 +285,11 @@ button {
   }
   
   .top-section {
-    height: 22vh;
+    height: 18vh;
+  }
+  
+  .mobile-hide {
+    display: none !important;
   }
   
   .previous-numbers-panel {

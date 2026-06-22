@@ -74,11 +74,11 @@ export default function ViewerScreen() {
       {/* Topo */}
       <div className="top-section">
         <div className="glass-panel giant-number-container" style={{ position: 'relative' }}>
-          <img src="/logo.webp" alt="Colégio Integrado" style={{ height: 'clamp(30px, 8vw, 50px)', position: 'absolute', top: '1rem', left: '1rem', opacity: 0.9 }} />
+          <img src="/logo.webp" alt="Colégio Integrado" className="mobile-hide" style={{ height: 'clamp(30px, 8vw, 50px)', position: 'absolute', top: '1rem', left: '1rem', opacity: 0.9 }} />
           {/* Botão de Som */}
           <button 
             onClick={toggleSound}
-            className="glass-panel flex-center"
+            className="glass-panel flex-center mobile-hide"
             style={{
               position: 'absolute', top: '1rem', right: '1rem', zIndex: 3000,
               background: isSoundOn ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255, 255, 255, 0.1)',

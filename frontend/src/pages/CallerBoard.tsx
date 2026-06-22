@@ -112,7 +112,7 @@ export default function CallerBoard() {
          <button onClick={resetGame} className="btn-accent flex-center gap-1" style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1rem)' }}>
            <RefreshCw size={18} /> Reiniciar
          </button>
-         <button onClick={toggleSound} className="btn-primary flex-center gap-1" style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1rem)', background: isSoundOn ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255,255,255,0.1)', color: isSoundOn ? '#10b981' : 'white', borderColor: isSoundOn ? 'rgba(16, 185, 129, 0.5)' : 'rgba(255,255,255,0.2)' }}>
+         <button onClick={toggleSound} className="btn-primary flex-center gap-1 mobile-hide" style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1rem)', background: isSoundOn ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255,255,255,0.1)', color: isSoundOn ? '#10b981' : 'white', borderColor: isSoundOn ? 'rgba(16, 185, 129, 0.5)' : 'rgba(255,255,255,0.2)' }}>
            {isSoundOn ? <Volume2 size={20} /> : <VolumeX size={20} />} Som
          </button>
       </div>
@@ -120,7 +120,7 @@ export default function CallerBoard() {
       {/* Topo */}
       <div className="top-section">
         <div className="glass-panel giant-number-container" style={{ position: 'relative' }}>
-          <img src="/logo.webp" alt="Colégio Integrado" style={{ height: 'clamp(30px, 8vw, 50px)', position: 'absolute', top: '1rem', left: '1rem', opacity: 0.9 }} />
+          <img src="/logo.webp" alt="Colégio Integrado" className="mobile-hide" style={{ height: 'clamp(30px, 8vw, 50px)', position: 'absolute', top: '1rem', left: '1rem', opacity: 0.9 }} />
           <h2 className="giant-number-title">
             {isShuffling ? 'Sorteando...' : 'Último Número'}
           </h2>
