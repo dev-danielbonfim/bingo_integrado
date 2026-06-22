@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { Play, Tv } from 'lucide-react';
+import { Play, Tv, Eye, EyeOff } from 'lucide-react';
 import { socket } from '../lib/socket';
 
 export default function Login() {
   const navigate = useNavigate();
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleCallerLogin = () => {
     if (!password) {
@@ -54,16 +55,25 @@ export default function Login() {
           </div>
 
           <div className="flex-col gap-2">
-            <input 
-              type="password" 
-              placeholder="Senha do Sorteador"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-                if (error) setError('');
-              }}
-              className="input-field"
-            />
+            <div style={{ position: 'relative', width: '100%' }}>
+              <input 
+                type={showPassword ? "text" : "password"}
+                placeholder="Senha do Sorteador"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  if (error) setError('');
+                }}
+                className="input-field"
+                style={{ paddingRight: '45px' }}
+              />
+              <button 
+                onClick={() => setShowPassword(!showPassword)}
+                style={{ position: 'absolute', right: '15px', top: '50%', transform: 'translateY(-50%)', background: 'transparent', color: 'var(--text-muted)' }}
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
             {error && <p style={{ color: 'var(--accent)', fontSize: '0.9rem', textAlign: 'left' }}>{error}</p>}
             <button 
               onClick={handleCallerLogin}

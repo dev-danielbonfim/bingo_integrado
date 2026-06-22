@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { socket } from '../lib/socket';
 import confetti from 'canvas-confetti';
-import { formatBingoNumber, getBingoNickname } from '../lib/utils';
+import { formatBingoNumber } from '../lib/utils';
 import { Dices, RefreshCw, ArrowLeft, Volume2, VolumeX } from 'lucide-react';
 import { sounds } from '../lib/sounds';
 
@@ -99,7 +99,7 @@ export default function CallerBoard() {
   };
 
   return (
-    <div className="app-container" style={{ position: 'relative' }}>
+    <div className="app-container" style={{ position: 'relative', paddingBottom: '80px' }}>
       
       {/* Barra de Controle do Sorteador (Flutuante no Rodapé) */}
       <div className="glass-panel control-bar" style={{ zIndex: 2000 }}>
@@ -120,7 +120,7 @@ export default function CallerBoard() {
       {/* Topo */}
       <div className="top-section">
         <div className="glass-panel giant-number-container" style={{ position: 'relative' }}>
-          <img src="/logo.webp" alt="Colégio Integrado" style={{ height: '60px', position: 'absolute', top: '1rem', left: '1.5rem', opacity: 0.9 }} />
+          <img src="/logo.webp" alt="Colégio Integrado" style={{ height: 'clamp(30px, 8vw, 50px)', position: 'absolute', top: '1rem', left: '1rem', opacity: 0.9 }} />
           <h2 className="giant-number-title">
             {isShuffling ? 'Sorteando...' : 'Último Número'}
           </h2>
@@ -137,12 +137,6 @@ export default function CallerBoard() {
             {displayNumber ? formatBingoNumber(displayNumber) : '--'}
           </div>
 
-          {/* Apelido do Número */}
-          {displayNumber && !isShuffling && getBingoNickname(displayNumber) && (
-            <div className="nickname-text animate-pop">
-              "{getBingoNickname(displayNumber)}"
-            </div>
-          )}
         </div>
 
         <div className="glass-panel previous-numbers-panel">

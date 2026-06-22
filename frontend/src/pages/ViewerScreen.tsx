@@ -71,25 +71,25 @@ export default function ViewerScreen() {
   return (
     <div className="app-container" style={{ paddingBottom: '1rem', position: 'relative' }}>
       
-      {/* Botão de Som */}
-      <button 
-        onClick={toggleSound}
-        className="glass-panel flex-center"
-        style={{
-          position: 'absolute', top: '1.5rem', right: '1.5rem', zIndex: 3000,
-          background: isSoundOn ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255, 255, 255, 0.1)',
-          border: `1px solid ${isSoundOn ? 'rgba(16, 185, 129, 0.5)' : 'rgba(255,255,255,0.2)'}`,
-          padding: '12px', borderRadius: '50%', cursor: 'pointer',
-          color: isSoundOn ? '#10b981' : 'white'
-        }}
-      >
-        {isSoundOn ? <Volume2 size={24} /> : <VolumeX size={24} />}
-      </button>
-
       {/* Topo */}
       <div className="top-section">
         <div className="glass-panel giant-number-container" style={{ position: 'relative' }}>
-          <img src="/logo.webp" alt="Colégio Integrado" style={{ height: '60px', position: 'absolute', top: '1rem', left: '1.5rem', opacity: 0.9 }} />
+          <img src="/logo.webp" alt="Colégio Integrado" style={{ height: 'clamp(30px, 8vw, 50px)', position: 'absolute', top: '1rem', left: '1rem', opacity: 0.9 }} />
+          {/* Botão de Som */}
+          <button 
+            onClick={toggleSound}
+            className="glass-panel flex-center"
+            style={{
+              position: 'absolute', top: '1rem', right: '1rem', zIndex: 3000,
+              background: isSoundOn ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255, 255, 255, 0.1)',
+              border: `1px solid ${isSoundOn ? 'rgba(16, 185, 129, 0.5)' : 'rgba(255,255,255,0.2)'}`,
+              padding: '10px', borderRadius: '50%', cursor: 'pointer',
+              color: isSoundOn ? '#10b981' : 'white'
+            }}
+          >
+            {isSoundOn ? <Volume2 size={20} /> : <VolumeX size={20} />}
+          </button>
+          
           <h2 className="giant-number-title">
             {isShuffling ? 'Sorteando...' : 'Último Número'}
           </h2>
