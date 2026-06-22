@@ -28,21 +28,21 @@ export default function Login() {
 
   return (
     <div className="center-screen">
-      <div className="glass-panel" style={{ padding: '40px', width: '100%', maxWidth: '450px', textAlign: 'center' }}>
+      <div className="glass-panel" style={{ padding: 'clamp(20px, 5vw, 40px)', width: '100%', maxWidth: '450px', textAlign: 'center' }}>
         
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <img src="/logo.webp" alt="Logo Colégio Integrado" style={{ height: '100px', margin: '0 auto 1rem' }} />
-          <h1 style={{ fontSize: '2.5rem', fontWeight: '900', color: 'white' }}>Bingo Colégio Integrado</h1>
-          <p style={{ color: 'var(--text-muted)' }}>Painel de Controle</p>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(1rem, 4vw, 2rem)' }}>
+          <img src="/logo.webp" alt="Logo Colégio Integrado" style={{ height: 'clamp(60px, 15vw, 100px)', margin: '0 auto 1rem' }} />
+          <h1 style={{ fontSize: 'clamp(1.5rem, 6vw, 2.5rem)', fontWeight: '900', color: 'white', lineHeight: '1.2' }}>Bingo Colégio Integrado</h1>
+          <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>Painel de Controle</p>
         </div>
 
-        <p style={{ color: 'var(--text-muted)', marginBottom: '40px', fontSize: '1.2rem' }}>Selecione como deseja entrar</p>
+        <p style={{ color: 'var(--text-muted)', marginBottom: 'clamp(20px, 5vw, 40px)', fontSize: 'clamp(1rem, 4vw, 1.2rem)' }}>Selecione como deseja entrar</p>
 
         <div className="flex-col gap-3">
           <button 
             onClick={() => navigate('/viewer')}
             className="btn-primary flex-center gap-2"
-            style={{ background: 'var(--success)', boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.39)', padding: '20px', fontSize: '1.3rem' }}
+            style={{ background: 'var(--success)', boxShadow: '0 4px 14px 0 rgba(16, 185, 129, 0.39)', padding: 'clamp(15px, 4vw, 20px)', fontSize: 'clamp(1.1rem, 4vw, 1.3rem)' }}
           >
             <Tv size={28} />
             Entrar como Projetor
