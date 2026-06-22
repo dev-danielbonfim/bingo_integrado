@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { socket } from '../lib/socket';
 import confetti from 'canvas-confetti';
-import { formatBingoNumber, getBingoNickname } from '../lib/utils';
+import { formatBingoNumber } from '../lib/utils';
 import { Volume2, VolumeX } from 'lucide-react';
 import { sounds } from '../lib/sounds';
 
@@ -105,13 +105,6 @@ export default function ViewerScreen() {
           >
             {displayNumber ? formatBingoNumber(displayNumber) : '--'}
           </div>
-          
-          {/* Apelido do Número */}
-          {displayNumber && !isShuffling && getBingoNickname(displayNumber) && (
-            <div className="nickname-text animate-pop">
-              "{getBingoNickname(displayNumber)}"
-            </div>
-          )}
         </div>
 
         {/* Últimos 3 números */}
