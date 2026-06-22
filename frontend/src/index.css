@@ -206,12 +206,12 @@ button {
 }
 
 .previous-numbers-title {
-  font-size: clamp(0.7rem, 2.5vw, 1rem);
+  font-size: clamp(0.6rem, 2vw, 0.9rem);
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0;
 }
 
 .previous-numbers-list {
@@ -224,10 +224,10 @@ button {
 
 .previous-number-box {
   background: rgba(255, 255, 255, 0.05);
-  padding: 0.3rem;
+  padding: clamp(0.1rem, 1vh, 0.3rem);
   border-radius: 8px;
   text-align: center;
-  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(0.9rem, 3vw, 1.5rem);
   font-weight: bold;
 }
 
@@ -257,6 +257,8 @@ button {
   font-weight: 900;
   text-align: center;
   padding-right: 0.2rem;
+  min-height: 0;
+  line-height: 1;
 }
 
 .grid-item {
@@ -267,6 +269,8 @@ button {
   font-weight: 700;
   border-radius: 4px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  min-height: 0;
+  line-height: 1;
 }
 
 /* Responsividade Mobile Extrema */
@@ -278,15 +282,16 @@ button {
   }
   
   .top-section {
-    height: 30vh;
+    height: 22vh;
   }
   
   .previous-numbers-panel {
-    width: 25%;
+    width: 32%;
+    padding: 0.3rem;
   }
 
   .giant-number-container {
-    padding: 0.5rem;
+    padding: 0.2rem;
   }
   
   .control-bar {
